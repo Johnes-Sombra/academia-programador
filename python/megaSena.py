@@ -69,35 +69,35 @@ sorteio = sorteaSena();
 aposta = [];
 
 # trecho processa a aposta
-print "Faça sua aposta: ";
+print ("Faça sua aposta: ")
 
 for i in range (0, NUMERO_DEZENAS):
 
     while True:
         nroAposta = int(raw_input("Informe a dezena "+ str(i+1) +": "));
         if (nroAposta <= 0):
-            print "Número inválido, aposta cancelada!";
+            print ("Número inválido, aposta cancelada!");
             sys.exit(); # encerra o programa
 
         if (existeNumero(aposta, nroAposta)):
-            print "Ops, número repetido!";
+            print ("Ops, número repetido!");
         else:
             break;
 
     aposta.append(nroAposta);
 
-print "\nConfira sua aposta: ", str(aposta)[1:-1]
+print ("\nConfira sua aposta: "), str(aposta)[1:-1]
 
-print "\nResultado do sorteio: ", str(sorteio)[1:-1]
+print ("\nResultado do sorteio: "), str(sorteio)[1:-1]
 
 nroAcertos = contaAcertos(sorteio, aposta);
-print "\nNúmero de acertos: ", nroAcertos;
+print ("\nNúmero de acertos: "), nroAcertos;
 
 if nroAcertos == 4:
-    print "Parabéns. Você acertou a quadra!";
+    print ("Parabéns. Você acertou a quadra!");
 elif nroAcertos == 5:
-    print "Parabéns. Você acertou a quina!";
+    print ("Parabéns. Você acertou a quina!");
 elif nroAcertos == 6:
-    print "Parabéns. Você é campeão da MegaSena!";
+    print ("Parabéns. Você é campeão da MegaSena!");
 else:
-    print "Não foi dessa vez. Tente novamente!";
+    print ("Não foi dessa vez. Tente novamente!");
